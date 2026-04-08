@@ -7,17 +7,22 @@
   <meta name="description" content="Jardinier professionnel à Fontenay-sous-Bois. Tonte pelouse, taille haies, entretien jardin. 50% crédit d'impôt immédiat. Groupe La Poste. Devis gratuit – 01 77 39 27 27">
 
   <!-- ═══════════════════════════════════════════
-       GOOGLE CONSENT MODE v2 — AVANT gtag.js
+       1. DEXEM EN PREMIER — avant tout le reste
+  ════════════════════════════════════════════ -->
+  <script type="text/javascript" src="https://cdn.dexem.net/tags/e80f13bb-63d4-4135-8b39-b487f872cf54/dexem.js"></script>
+
+  <!-- ═══════════════════════════════════════════
+       2. GOOGLE CONSENT MODE v2 — après Dexem
   ════════════════════════════════════════════ -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
-      analytics_storage:  'denied',
-      ad_storage:         'denied',
-      ad_user_data:       'denied',
-      ad_personalization: 'denied',
-      wait_for_update:    500
+      'ad_storage':         'denied',
+      'analytics_storage':  'denied',
+      'ad_user_data':       'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update':    500
     });
     (function(){
       var c = localStorage.getItem('axeo_consent');
@@ -30,8 +35,25 @@
       gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
     }
   </script>
-  <!-- GTM : remplacer GTM-XXXXXXX par votre ID -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXX"></script> -->
+
+  <!-- ═══════════════════════════════════════════
+       3. GOOGLE TAG MANAGER — GTM-W3G2XVNH
+  ════════════════════════════════════════════ -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W3G2XVNH');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ═══════════════════════════════════════════
+       4. GOOGLE ADS — AW-16990555731
+  ════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16990555731"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'AW-16990555731');
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,7 +95,6 @@
     }
     .logo-wrap { display: flex; align-items: center; gap: 10px; }
     .logo-svg { width: 130px; height: auto; }
-    .logo-sub { font-size: 11px; color: var(--mid); font-weight: 600; letter-spacing: .8px; text-transform: uppercase; }
     .header-cta a {
       background: var(--orange); color: white;
       padding: 10px 20px; border-radius: var(--radius);
@@ -238,9 +259,7 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px; max-width: 860px; margin: 0 auto;
     }
-    .step {
-      text-align: center; padding: 24px 18px;
-    }
+    .step { text-align: center; padding: 24px 18px; }
     .step-num {
       width: 48px; height: 48px; border-radius: 50%;
       background: var(--orange); color: white;
@@ -314,8 +333,8 @@
     .ck-text { font-size: 13px; max-width: 560px; opacity: .88; }
     .ck-text a { color: #FF5A1F; }
     .ck-btns { display: flex; gap: 10px; flex-shrink: 0; }
-    .ck-accept { background: #FF5A1F; color: white; border: none; padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; }
-    .ck-refuse { background: transparent; color: #aaa; border: 1.5px solid #555; padding: 9px 16px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+    .ck-accept { background: #FF5A1F; color: white; border: 2px solid #FF5A1F; padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; }
+    .ck-refuse { background: transparent; color: white; border: 2px solid white; padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; }
     @media (max-width: 480px) { .ck-btns { flex-direction: column; width: 100%; } .ck-accept, .ck-refuse { width: 100%; text-align: center; } }
 
     /* ── RESPONSIVE ── */
@@ -327,9 +346,14 @@
 </head>
 <body>
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3G2XVNH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- STICKY TOP BAR -->
   <div class="topbar">
-    📞 <a href="tel:0177392727">01 77 39 27 27</a> — Appel gratuit · Devis immédiat
+    📞 <a href="tel:0177392727" onclick="gtagConversion()"><span class="phone-num">01 77 39 27 27</span></a> — Appel gratuit · Devis immédiat
     <small>Lun–Ven 9h–17h · Sam sur RDV · Sans engagement</small>
   </div>
 
@@ -344,7 +368,7 @@
       </svg>
     </div>
     <div class="header-cta">
-      <a href="tel:0177392727">📞 01 77 39 27 27 — Devis gratuit</a>
+      <a href="tel:0177392727" onclick="gtagConversion()">📞 <span class="phone-num">01 77 39 27 27</span> — Devis gratuit</a>
     </div>
   </header>
 
@@ -359,8 +383,8 @@
       <div class="pill"><span>⚡</span> Intervention rapide</div>
       <div class="pill"><span>🔄</span> Même intervenant toujours</div>
     </div>
-    <a class="btn-hero" href="tel:0177392727">📞 Appel gratuit — réponse immédiate</a>
-    <p class="hero-hint">01 77 39 27 27 · Devis en 2h · Sans engagement</p>
+    <a class="btn-hero" href="tel:0177392727" onclick="gtagConversion()">📞 Appel gratuit — <span class="phone-num">01 77 39 27 27</span></a>
+    <p class="hero-hint"><span class="phone-num">01 77 39 27 27</span> · Devis en 2h · Sans engagement</p>
   </section>
 
   <!-- ALERT STRIP -->
@@ -417,7 +441,7 @@
       <div class="fiscal-badge">🧾 Facture officielle</div>
       <div class="fiscal-badge">📋 Sans engagement</div>
     </div>
-    <a class="btn-fiscal" href="tel:0177392727">📞 01 77 39 27 27 — Devis gratuit</a>
+    <a class="btn-fiscal" href="tel:0177392727" onclick="gtagConversion()">📞 <span class="phone-num">01 77 39 27 27</span> — Devis gratuit</a>
   </div>
 
   <!-- WHY -->
@@ -539,7 +563,7 @@
   <section class="final-cta" id="contact">
     <h2>Prêt pour un jardin impeccable ?</h2>
     <p>Appelez maintenant. Devis gratuit en 2h. Aucun engagement.</p>
-    <a class="btn-final" href="tel:0177392727">📞 01 77 39 27 27</a>
+    <a class="btn-final" href="tel:0177392727" onclick="gtagConversion()">📞 <span class="phone-num">01 77 39 27 27</span></a>
     <div class="final-meta">Lun–Ven 9h–17h · Sam sur RDV · Devis gratuit · Sans engagement</div>
   </section>
 
@@ -547,7 +571,7 @@
   <footer>
     <strong>AXEO Services Fontenay-sous-Bois</strong><br>
     38 boulevard de Verdun · 94120 Fontenay-sous-Bois<br>
-    <a href="tel:0177392727">01 77 39 27 27</a> · <a href="mailto:dferton@axeoservices.com">dferton@axeoservices.com</a><br>
+    <a href="tel:0177392727" onclick="gtagConversion()"><span class="phone-num">01 77 39 27 27</span></a> · <a href="mailto:dferton@axeoservices.com">dferton@axeoservices.com</a><br>
     N° SAP : SAP817441538 · SIRET : 817 441 538 00011<br>
     Membre du réseau <strong>AXEO Services – Groupe La Poste</strong><br><br>
     <a href="#mentions">Mentions légales</a> · <a href="#confidentialite">Données personnelles</a>
@@ -555,13 +579,13 @@
 
   <!-- FLOATING CTA (mobile) -->
   <div class="float-cta">
-    <a href="tel:0177392727">📞 Appeler — 01 77 39 27 27</a>
+    <a href="tel:0177392727" onclick="gtagConversion()">📞 Appeler — <span class="phone-num">01 77 39 27 27</span></a>
   </div>
 
   <!-- ═══════════════════════════════════════════
        COOKIE BANNER — CNIL + Consent Mode v2
   ════════════════════════════════════════════ -->
-  <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Gestion des cookies">
+  <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Gestion des cookies" aria-live="polite">
     <p class="ck-text">
       Ce site utilise des cookies Google Analytics et Google Ads pour mesurer les performances et améliorer votre expérience. Vos données ne sont pas revendues.
       <a href="#confidentialite">En savoir plus</a>
@@ -573,6 +597,7 @@
   </div>
 
   <script>
+    // ── Cookies CNIL ──
     function acceptCookies() {
       _grantAll();
       localStorage.setItem('axeo_consent', 'granted');
@@ -594,8 +619,12 @@
       }
     });
 
-    // Ldexem dynamic number replacement placeholder
-    // <script src="https://[ton-compte].ldexem.com/tracker.js" async></script>
+    // ── Google Ads Conversion — clic sur tel: ──
+    function gtagConversion() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16990555731'
+      });
+    }
   </script>
 
 </body>
